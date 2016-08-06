@@ -1,0 +1,161 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700,400italic);
+
+
+/*Every Page*/
+    /* footer */
+    .footer{
+        border-top: 1px solid gray;
+        margin-top: 1em;
+    }
+    .footer a {
+        size: 1em;
+        color: rgb(100,100,100);
+        text-align: center;
+    }
+    .footer a:link {
+        text-decoration: none;
+    }
+    .footer a:visited {
+        text-decoration: none;
+    }
+    .footer  a:hover {
+        text-decoration: underline;
+    }
+    .footer  a:active {
+        text-decoration: underline;
+    }
+
+    md-toolbar{
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, .3);
+    }
+
+    thead, tfoot{
+        background-color: rgba(63, 81, 181, 0.05)
+    }
+
+    /*Menu*/
+    .side-menu-cointainer{
+        width:100%;
+    }
+    .side-menu-item {
+        width: 100%;
+    }
+    .menu-item{
+        text-align: left;
+        width:100%;
+    }
+    md-sidenav {
+        width:50%;
+        max-width: 256px;
+    }
+
+    #view{
+        min-height: 100%;
+        padding-left: 1em;
+        padding-right: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    md-card {
+        margin: 1em;
+        padding: 1em;
+    }
+
+    @media (max-width: 480px) {
+        #view{
+            padding: 0;
+            margin: 0;
+        }
+        md-card {
+            margin: 0;
+        }
+    }
+/*Every Page*/
+
+/*Helpers*/
+    /* table */
+    th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 15px;
+    }
+    table{
+        font-size: 1.2em;
+        width: 100%;
+    }
+
+    .top-right-container {
+        text-align: right;
+        position: absolute;
+        top:0;
+        right:0;
+    }
+
+    .bottom-right-container {
+        text-align: right;
+        position: absolute;
+        bottom:0;
+        right:0;
+    }
+
+    .bottom-container {
+        width: 100%;
+        position: absolute;
+        bottom:0;
+    }
+
+    .bottom-left-container {
+        position:absolute;
+        bottom:0;
+        left:0;
+    }
+
+    .red{
+        color: red;
+    }
+
+    .white{
+        color: white;
+    }
+
+    .shadow{
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    @media only screen and (max-device-width: 480px) {
+        .center-if-mobile {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+        }
+    }
+/*Helpers*/
+
+/*Core*/
+    html {
+        font-size: 1em;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    p{
+        font-size: 1em;
+    }
+    button, select, html, textarea, input, tspan, text {
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+    }
+    body{
+        min-height: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .cointainer {
+        min-height: 100%;
+        background-color: rgba(128, 128, 128, 0.1);
+    }
+    h1{
+        font-size: 1.5em;
+    }
+    h2{
+        font-size: 1.4em;
+    }
+/*core*/

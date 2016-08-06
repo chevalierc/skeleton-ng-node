@@ -1,0 +1,30 @@
+<div layout="row" layout-align="center center" >
+
+	<md-card flex-gt-sm="50" style="">
+
+		<h1>
+			<span class= "glyphicon glyphicon-user"></span>
+			<span>Update Profile</span>
+		</h1>
+
+		<form name="updateProfileForm" ng-model = "updateProfile.userData" ng-submit="updateProfile.submit()">
+
+			<md-input-container class="md-block" flex-gt-xs>
+				<label>Nickname</label>
+				<input ng-model="updateProfile.userData.nickname">
+			</md-input-container>
+
+			<i ng-if="updateProfile.error">{{updateProfile.error}}</i>
+
+			<div layout ="row">
+				<md-button class="md-raised md-primary" flex = "grow" type="submit">
+					<span ng-if="!updateProfile.processing">Update</span>
+					<span ng-if="updateProfile.processing">loading...</span>
+				</md-button>
+			</div>
+
+		</form>
+
+	</md-card>
+
+</div>
