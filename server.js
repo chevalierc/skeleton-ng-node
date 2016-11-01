@@ -2,8 +2,6 @@
 // ======================================
 
 // CALL THE PACKAGES --------------------
-var path = require( 'path' );
-var mysql = require( "mysql" );
 var express = require( 'express' );
 var config = require( './app/config/config' );
 var environment = require( './app/config/enviroment' );
@@ -15,11 +13,8 @@ app = express()
 //set up configurables
 environment( app );
 
-//connect to db
-var pool = mysql.createPool( config.database )
-
 //set up routes
-routes( app, express, pool );
+routes( app, express );
 
 //should show previously hidden errors
 process.on( 'unhandledRejection', console.log )

@@ -4,14 +4,7 @@ angular.module( 'app', [ 'ngMaterial',
     'ngMessages',
 
     'app.routes',
-    'mainCtrl',
-    'authService',
-    'signupCtrl',
-    'updatePasswordCtrl',
-    'updateProfileCtrl',
-    'profileCtrl',
-    'profileCtrl',
-    'ngSanitize'
+    'mainCtrl'
 ] )
 
 // // application configuration to integrate token into requests
