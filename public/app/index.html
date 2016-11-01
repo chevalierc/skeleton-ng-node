@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app" ng-controller="mainController as main" >
+<html lang="en" ng-app="app" ng-controller="mainController as main">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Site</title>
+    <title>Search the Scientific Data Cloud</title>
 
     <!-- FOR ANGULAR ROUTING -->
-	<base href="/">
+    <base href="/">
 
     <!--ng-material css-->
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
@@ -15,11 +16,8 @@
     <!-- Custom styles for this template -->
     <link href="assets/_css/mystyle.css" rel="stylesheet">
 
-    <!-- TExt To Speach -->
-    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
-
     <!-- Core Angular dependecies-->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.7/angular-sanitize.js"></script>
 
@@ -29,141 +27,33 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc.5/angular-material.min.js"></script>
 
-	<!-- controllers -->
-	<script src="app/mainCtrl.js"></script>
+    <!-- controllers -->
+    <script src="app/mainCtrl.js"></script>
 
-    <script src="app/auth/signup.controller.js"></script>
-    <script src="app/auth/updatePassword.controller.js"></script>
-    <script src="app/auth/updateProfile.controller.js"></script>
-
-    <script src="app/profile/profile.controller.js"></script>
 
     <!--Service-->
-    <script src="app/auth/auth.service.js"></script>
 
     <!--directive-->
 
-	<!-- main Angular app files -->
-	<script src="app/app.routes.js"></script>
-	<script src="app/app.js"></script>
+    <!-- main Angular app files -->
+    <script src="app/app.routes.js"></script>
+    <script src="app/app.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
-<body id="body">
-
-<div layout="column" class = "cointainer" ng-cloak>
-
-    <!-- side nav -->
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left"  layout="vertical" layout-fill >
-        <md-content class="side-menu-cointainer" role="navigation" style="overflow-x: hidden; overflow-y: auto;">
-
-            <div class = "side-menu-item">
-                <md-button class="menu-item" ng-href="/">
-                    <h2><span>
-                        Site
-                    </span></h2>
-                </md-button>
-            </div>
-
-            <md-list class = "side-menu-item" ng-if="main.loggedIn" >
-                <md-button class="menu-item"  ng-href="/profile">Profile</md-button>
-            </md-list>
-
-            <md-list class = "side-menu-item" ng-if="!main.loggedIn" >
-                <md-button class="menu-item" ng-href="/login">Login</md-button>
-            </md-list>
-
-            <md-list class = "side-menu-item" ng-if="!main.loggedIn" >
-                <md-button class="menu-item" ng-href="/signup">Signup</md-button>
-            </md-list>
-
-            <md-list class = "side-menu-item" ng-if="main.loggedIn" >
-                <md-button class="menu-item" ng-click="main.doLogout()">Logout</md-button>
-            </md-list>
-
-        </md-content>
-    </md-sidenav>
-
-    <!--Main toolbar -->
-    <md-toolbar class="md-theme-indigo" layout = "row" md-scroll-shrink id="menu" md-whiteframe="8" flex="none">
-
-        <div class="md-toolbar-tools">
-
-            <!--left gutter-->
-            <div flex="20" layout-padding hide-sm hide-xs hide-md></div>
-
-            <!--Menu -->
-            <div layout="row" flex="grow">
-
-                <md-button flex ng-click="main.toggleSideNav()" hide-md hide-lg hide-xl>
-                    <span>
-                        <span class = "glyphicon glyphicon-fire"></span>Site
-                    </span>
-                </md-button>
-
-                <div flex="grow" hide-sm hide-xs layout="row" >
-                    <div flex = "noshrink" layout-padding >
-                        <h2><a ng-href="/">
-                            <span>
-                                <span class = "glyphicon glyphicon-fire"></span>Site
-                            </span>
-                        </a></h2>
-                    </div>
-
-                    <!--gap in menu -->
-                    <div flex = "grow"></div>
-
-                    <div flex = "initial" layout = "row" layout-align="start center">
-                        <md-button ng-if="!main.loggedIn" ng-href="/login">Login</md-button>
-                        <md-button ng-if="!main.loggedIn" ng-href="/signup">Signup</md-button>
-                        <md-button ng-if="main.loggedIn" ng-href="/profile">Profile</md-button>
-                        <md-button ng-if="main.loggedIn" ng-click="main.doLogout()">Logout</md-button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!--Right gutter-->
-            <div layout-padding flex="20" hide-md hide-sm hide-xs></div>
-
-        </div>
-
-    </md-toolbar>
-
-    <div flex="grow" layout="row" >
-
-        <!-- gutter -->
-        <div hide-md hide-sm hide-xs flex = "20"></div>
-
-        <!--content -->
-        <div flex = "grow" id="view" ng-view></div>
-
-        <!-- gutter -->
-        <div hide-md hide-sm hide-xs flex = "20"></div>
-
-    </div>
-
-    <div flex ="none" layout="row" ng-if="main.showFooter" layout-padding>
-        <!-- gutter -->
-        <div hide-md hide-sm hide-xs flex = "20" >
-        </div>
-
-        <!--content -->
-        <div flex = "grow " layout="row" layout-align="space-around" class="footer" >
-            foot
-        </div >
-
-        <!-- gutter -->
-        <div hide-md hide-sm hide-xs flex = "20">
-        </div>
-    </div>
-
-</div>
+<body id="body" ng-view>
 
 </body>
+
+</html>
+
+
+</body>
+
 </html>
